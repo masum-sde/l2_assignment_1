@@ -8,10 +8,14 @@ async function squareAsync(n: number): Promise<number> {
     if (n >= 0) {
       setTimeout(() => resolve(n * n), 1000);
     } else {
-      reject("Negative number not allowed");
+      reject({ message: "Negative number not allowed" });
     }
   });
 }
 
-squareAsync(5).then((response) => console.log(response));
-squareAsync(-5).then((response) => console.log(response));
+squareAsync(5)
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error.message));
+squareAsync(-5)
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error.message));
