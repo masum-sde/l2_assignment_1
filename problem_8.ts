@@ -1,3 +1,8 @@
+// Description: Create an async function that:
+
+// Returns the square of a number after 1 second
+// Rejects if the number is negative
+
 async function squareAsync(n: number): Promise<number> {
   return new Promise<number>((resolve, reject) => {
     if (n >= 0) {
